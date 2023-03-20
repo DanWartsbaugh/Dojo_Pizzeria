@@ -1,34 +1,46 @@
-//Make a random pizza with a random number of cheeses and a random number of toppings
+//Make a random pizza with a random number of cheeses and a random number of toppings.
+//Multiple cheeses and multiple toppings may be chosen.
+//Each cheese or topping may only be used once per pizza.
 
 function randomPizza(crustType,sauceType,cheeses,toppings) {
     var pizza = {};
     
-    //select specific cheeses
-    // var cheeseMenu=["mozzarella","provolone","feta","cheddar","swiss"];
+//Select specific cheeses. Each cheese should be used no more than once.    
     var cheeseOptions=["mozzarella","provolone","feta","cheddar","swiss"];
+    //Sets the number of cheeses to be selected.
     var c=Math.ceil(Math.random()*cheeseOptions.length);
+    //This will be the final cheese selections.
     var cheeseSelections=[]
-    for(var n=0;n<c;n++){
-        var cheeseChoice=Math.floor(Math.random()*cheeseOptions.length);
-        cheeseSelections[n]=cheeseOptions[cheeseChoice];
 
-        var temp=cheeseOptions[cheeseChoice];
+    //Loop through the cheese options "t" times.
+    for(var n=0;n<c;n++){
+        //Select a random cheese from the options.
+        var cheeseChoice=Math.floor(Math.random()*cheeseOptions.length);
+        //Add the above cheese to the cheeseSelections.
+        cheeseSelections[n]=cheeseOptions[cheeseChoice];
+        //Remove used item from the array by replacing it with the last item in the array.
         cheeseOptions[cheeseChoice]=cheeseOptions[cheeseOptions.length-1];
+        //Remove the last item of the array.
         cheeseOptions.pop();
 
     }
 
-    //select specific toppings
-    // var topOptions=["pepperoni","sausage","bacon","basil","black olives","mushrooms","onions"];
+    //Select specific toppings. Each topping should be used no more than once.
     var options=["pepperoni","sausage","bacon","basil","black olives","mushrooms","onions"];
+    //Sets the number of toppings to be selected.
     var t=Math.ceil(Math.random()*options.length);
+    //This will be the final toppings selections.
     var selections=[]
+
+    //Loop through the toppings options "t" times.
     for(var n=0;n<t;n++){
-        console.log(options);
+        //Select a random topping from the options.
         var choice=Math.floor(Math.random()*options.length);
+        //Add the above topping to the selections array.
         selections[n]=options[choice];
-        var temp=options[choice];
+        //Remove used item from the array (so that we do not have the same topping used more than once) by replacing it with the last item in the array.
         options[choice]=options[options.length-1];
+        //Remove the last item of the array.
         options.pop();
     }
     
