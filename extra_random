@@ -33,12 +33,12 @@ function randomPizza(crustType,sauceType,cheeses,toppings) {
     
     crustType=["deep dish","hand tossed","thin crust"];
     sauceType=["traditional","marinara","barbecue","alfredo"];
-    cheeses=["mozzarella","provolone","feta","cheddar","swiss"];
+    cheeses=cheeseSelections;
     toppings=selections;
 
     pizza.crustType = crustType[Math.floor(Math.random()*crustType.length)];
     pizza.sauceType = sauceType[Math.floor(Math.random()*sauceType.length)];
-    pizza.cheeses = cheeseSelections;
+    pizza.cheeses = cheeses;
     pizza.toppings = toppings;
 
     
