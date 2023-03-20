@@ -4,9 +4,9 @@ function randomPizza(crustType,sauceType,cheeses,toppings) {
     var pizza = {};
     
     //select specific cheeses
-    var cheeseMenu=["mozzarella","provolone","feta","cheddar","swiss"];
+    // var cheeseMenu=["mozzarella","provolone","feta","cheddar","swiss"];
     var cheeseOptions=["mozzarella","provolone","feta","cheddar","swiss"];
-    var c=Math.ceil(Math.random()*cheeseMenu.length);
+    var c=Math.ceil(Math.random()*cheeseOptions.length);
     var cheeseSelections=[]
     for(var n=0;n<c;n++){
         var cheeseChoice=Math.floor(Math.random()*cheeseOptions.length);
@@ -19,15 +19,16 @@ function randomPizza(crustType,sauceType,cheeses,toppings) {
     }
 
     //select specific toppings
-    var topOptions=["pepperoni","sausage","bacon","basil","black olives","mushrooms","onions"];
+    // var topOptions=["pepperoni","sausage","bacon","basil","black olives","mushrooms","onions"];
     var options=["pepperoni","sausage","bacon","basil","black olives","mushrooms","onions"];
-    var t=Math.ceil(Math.random()*topOptions.length);
+    var t=Math.ceil(Math.random()*options.length);
     var selections=[]
     for(var n=0;n<t;n++){
+        console.log(options);
         var choice=Math.floor(Math.random()*options.length);
         selections[n]=options[choice];
         var temp=options[choice];
-        options[cheeseChoice]=options[options.length-1];
+        options[choice]=options[options.length-1];
         options.pop();
     }
     
