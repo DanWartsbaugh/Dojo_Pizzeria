@@ -1,4 +1,4 @@
-//I used tips from Stack Overflow to get Math.random to work
+//Makes a random pizza with one cheese and one topping
 
 function randomPizza(crustType,sauceType,cheeses,toppings) {
     var pizza = {};
@@ -11,6 +11,7 @@ function randomPizza(crustType,sauceType,cheeses,toppings) {
     pizza.sauceType = sauceType[Math.floor(Math.random()*sauceType.length)];
     pizza.cheeses = cheeses[Math.floor(Math.random()*cheeses.length)];
     pizza.toppings = toppings[Math.floor(Math.random()*toppings.length)];
+
     return pizza;
 }
 

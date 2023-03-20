@@ -1,0 +1,48 @@
+//Make a random pizza with a random number of cheeses and a random number of toppings
+
+function randomPizza(crustType,sauceType,cheeses,toppings) {
+    var pizza = {};
+    
+    //select specific cheeses
+    var cheeseMenu=["mozzarella","provolone","feta","cheddar","swiss"];
+    var cheeseOptions=["mozzarella","provolone","feta","cheddar","swiss"];
+    var c=Math.ceil(Math.random()*cheeseMenu.length);
+    var cheeseSelections=[]
+    for(var n=0;n<c;n++){
+        var cheeseChoice=Math.floor(Math.random()*cheeseOptions.length);
+        cheeseSelections[n]=cheeseOptions[cheeseChoice];
+
+        var temp=cheeseOptions[cheeseChoice];
+        cheeseOptions[cheeseChoice]=cheeseOptions[cheeseOptions.length-1];
+        cheeseOptions.pop();
+
+    }
+
+    //select specific toppings
+    var topOptions=["pepperoni","sausage","bacon","basil","black olives","mushrooms","onions"];
+    var options=["pepperoni","sausage","bacon","basil","black olives","mushrooms","onions"];
+    var t=Math.ceil(Math.random()*topOptions.length);
+    var selections=[]
+    for(var n=0;n<t;n++){
+        var choice=Math.floor(Math.random()*options.length);
+        selections[n]=options[choice];
+        var temp=options[choice];
+        options[cheeseChoice]=options[options.length-1];
+        options.pop();
+    }
+    
+    crustType=["deep dish","hand tossed","thin crust"];
+    sauceType=["traditional","marinara","barbecue","alfredo"];
+    cheeses=["mozzarella","provolone","feta","cheddar","swiss"];
+    toppings=selections;
+
+    pizza.crustType = crustType[Math.floor(Math.random()*crustType.length)];
+    pizza.sauceType = sauceType[Math.floor(Math.random()*sauceType.length)];
+    pizza.cheeses = cheeseSelections;
+    pizza.toppings = toppings;
+
+    
+    return pizza;
+}
+
+console.log (randomPizza())
